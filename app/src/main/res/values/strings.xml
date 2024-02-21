@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">Dubaby</string>
+    <string name="todo_i">TODO</string>
+    <string name="hint_username">Email</string>
+    <string name="hint_password">Password</string>
+    <string name="button_sign_in">Sign In</string>
+    <string name="create_an_account">Create an Account</string>
+    <string name="text_register">If you not registered, click below</string>
+    <string name="text_button_sign_in">Sign In</string>
+    <string name="category_name">Categories</string>
+    <string name="product_price">$%1$.2f</string>
+    <string name="add_to_cart">Add to Cart</string>
+    <string name="hint_email">Email</string>
+    <string name="user_categories">User Categories</string>
+
+</resources>

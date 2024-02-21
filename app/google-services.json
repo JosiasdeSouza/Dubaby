@@ -1,0 +1,69 @@
+{
+  "project_info": {
+    "project_number": "207025928005",
+    "firebase_url": "https://dubabyapp-default-rtdb.firebaseio.com",
+    "project_id": "dubabyapp",
+    "storage_bucket": "dubabyapp.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:207025928005:android:c8c3ea978c7ef3d053702c",
+        "android_client_info": {
+          "package_name": "com.example.dubaby"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "207025928005-iciho8boqi9cpteudlpnti3rdd5rhiga.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyClqG9MIJ8BonHBk5d535ESyziWByRgHYE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "207025928005-iciho8boqi9cpteudlpnti3rdd5rhiga.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:207025928005:android:74c7ff3e10290a3653702c",
+        "android_client_info": {
+          "package_name": "com.example.onlineshopapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "207025928005-iciho8boqi9cpteudlpnti3rdd5rhiga.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyClqG9MIJ8BonHBk5d535ESyziWByRgHYE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "207025928005-iciho8boqi9cpteudlpnti3rdd5rhiga.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
