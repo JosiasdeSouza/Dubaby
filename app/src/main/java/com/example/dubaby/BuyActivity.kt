@@ -10,7 +10,7 @@ class BuyActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityBuyBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
+// Teste
 
     }
 }
