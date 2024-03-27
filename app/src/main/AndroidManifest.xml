@@ -33,6 +33,9 @@
         <activity android:name=".ProductsActivity"
             android:exported="true" />
 
+        <activity android:name=".CreateAnAccountActivity"
+            android:exported="true" />
+
         <activity android:name=".UserCategories"
              android:exported="true"/>
         <activity android:name=".BuyActivity"

@@ -9,6 +9,13 @@
     <color name="white">#FFFFFFFF</color>
     <color name="red">#FFFF0000</color>
     <color name="pink">#D95BAD</color>
-    <color name="blue">#66B1F2</color>
+    <color name="blue">#64A3EB</color>
     <color name="yellow">#FFD9A345</color>
+    <color name="green">#A0EB94</color>
+
+    <!-- Bottom Navigation Colors -->
+    <color name="bottom_nav_active">#A0EB94</color> <!-- Active item color -->
+    <color name="bottom_nav_inactive">#D95BAD</color> <!-- Inactive item color -->
+    <color name="bottom_nav_background">#64A3EB</color> <!-- Background color -->
+
 </resources>

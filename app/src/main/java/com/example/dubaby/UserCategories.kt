@@ -1,6 +1,8 @@
 package com.example.dubaby
 
 import android.content.Intent
+import android.graphics.Color
+import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
@@ -8,6 +10,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.dubaby.adapter.CategoriesAdapter
 import com.example.dubaby.models.UserCategory
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.firebase.database.*
 import com.google.firebase.database.ktx.getValue
 
@@ -19,6 +22,8 @@ class UserCategories : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_user_categories)
 
+        supportActionBar?.setBackgroundDrawable(ColorDrawable(Color.parseColor("#64a3eb")))
+        title = "Categories"
         categoriesRecyclerView = findViewById(R.id.categoriesRecyclerView)
         categoriesRecyclerView.layoutManager = LinearLayoutManager(this)
 
@@ -52,5 +57,31 @@ class UserCategories : AppCompatActivity() {
                 // Log or handle the error
             }
         })
+
+        val bottomNavigationView = findViewById<BottomNavigationView>(R.id.bottomNavigationView)
+        bottomNavigationView.setOnItemSelectedListener { item ->
+            when (item.itemId) {
+                R.id.navigation_buy -> {
+                    startActivity(Intent(this, BuyActivity::class.java))
+                    true
+                }
+                R.id.navigation_sell -> {
+                    startActivity(Intent(this, SellActivity::class.java))
+                    true
+                }
+                R.id.navigation_rent -> {
+                    startActivity(Intent(this, RentActivity::class.java))
+                    true
+                }
+                R.id.navigation_donate -> {
+                    startActivity(Intent(this, DonateActivity::class.java))
+                    true
+                }
+                else -> false
+            }
+        }
     }
 }
+
+
+

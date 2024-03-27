@@ -1,16 +1,85 @@
 package com.example.dubaby
+
+import android.content.Intent
+import android.graphics.Color
+import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
+import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
+import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.dubaby.adapter.ProductsAdapter
 import com.example.dubaby.databinding.ActivityBuyBinding
+import com.example.dubaby.models.Product
+import com.google.firebase.database.*
 
 class BuyActivity : AppCompatActivity() {
     private lateinit var binding: ActivityBuyBinding
+    private lateinit var databaseReference: DatabaseReference
+    private lateinit var productsAdapter: ProductsAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityBuyBinding.inflate(layoutInflater)
         setContentView(binding.root)
-// Teste
 
+        supportActionBar?.setBackgroundDrawable(ColorDrawable(Color.parseColor("#64a3eb")))
+        title = "Buy"
+
+        databaseReference = FirebaseDatabase.getInstance().getReference("buyproducts")
+
+        productsAdapter = ProductsAdapter(mutableListOf()) { product ->
+            // Handle product click event if necessary
+        }
+        binding.productsRecyclerView.layoutManager = LinearLayoutManager(this)
+        binding.productsRecyclerView.adapter = productsAdapter
+
+        fetchProducts()
+
+        setupBottomNavigationView()
+    }
+
+    private fun fetchProducts() {
+        databaseReference.addValueEventListener(object : ValueEventListener {
+            override fun onDataChange(snapshot: DataSnapshot) {
+                val products = mutableListOf<Product>()
+                snapshot.children.forEach { childSnapshot ->
+                    val product = childSnapshot.getValue(Product::class.java)
+                    product?.let { products.add(it) }
+                }
+                Log.d("BuyActivity", "Fetched ${products.size} products")
+                productsAdapter.updateProducts(products)
+            }
+
+            override fun onCancelled(error: DatabaseError) {
+                Log.e("BuyActivity", "Database error: $error")
+            }
+        })
+    }
+
+    private fun setupBottomNavigationView() {
+        val bottomNavigationView = binding.bottomNavigationView
+        bottomNavigationView.selectedItemId = R.id.navigation_buy
+        bottomNavigationView.setOnItemSelectedListener { item ->
+            when (item.itemId) {
+                R.id.navigation_buy -> {
+                    startActivity(Intent(this, BuyActivity::class.java))
+                    true
+                }
+                R.id.navigation_sell -> {
+                    startActivity(Intent(this, SellActivity::class.java))
+                    true
+                }
+                R.id.navigation_rent -> {
+                    startActivity(Intent(this, RentActivity::class.java))
+                    true
+                }
+                R.id.navigation_donate -> {
+                    startActivity(Intent(this, DonateActivity::class.java))
+                    true
+                }
+
+                else -> false
+            }
+        }
     }
 }

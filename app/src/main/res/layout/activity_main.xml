@@ -16,7 +16,6 @@
             android:id="@+id/topContainer"
             android:layout_width="match_parent"
             android:layout_height="250dp"
-            android:background="@drawable/bg"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"/>
@@ -57,7 +56,7 @@
                 android:maxLines="1"
                 android:textColorHint="@color/black"
                 android:padding="15dp"
-                android:textSize="18sp"/>
+                android:textSize="20sp"/>
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
@@ -74,7 +73,8 @@
             app:hintAnimationEnabled="true"
             app:layout_constraintTop_toBottomOf="@id/emailInputLayout"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent">
+            app:layout_constraintEnd_toEndOf="parent"
+            app:endIconMode="password_toggle">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/editPassword"
@@ -83,17 +83,20 @@
                 android:inputType="textPassword"
                 android:hint="@string/hint_password"
                 android:maxLines="1"
+                android:textSize="20sp"
                 android:textColorHint="@color/black"
-                android:padding="15dp"
-                android:textSize="18sp"/>
+                android:padding="15dp" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/buttonSignIn"
             style="@style/Widget.AppCompat.Button.Colored"
+            android:textColor="@color/blue"
+            android:background="@color/pink"
+            android:textSize="20sp"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="28dp"
+            android:layout_marginTop="35dp"
             android:layout_marginStart="20dp"
             android:layout_marginEnd="20dp"
             android:text="@string/button_sign_in"
@@ -101,18 +104,19 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"/>
 
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/buttonCreate"
-            style="@style/Widget.AppCompat.Button.Colored"
-            android:layout_width="0dp"
+        <TextView
+            android:id="@+id/textViewSignUp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:layout_marginStart="20dp"
-            android:layout_marginEnd="20dp"
-            android:text="@string/create_an_account"
-            app:layout_constraintTop_toBottomOf="@id/buttonSignIn"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"/>
+            android:layout_marginBottom="60dp"
+            android:textSize="22sp"
+            android:text="@string/don_t_have_an_account_sign_up"
+            android:textColor="@color/blue"
+            android:clickable="true"
+            android:focusable="true"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>
